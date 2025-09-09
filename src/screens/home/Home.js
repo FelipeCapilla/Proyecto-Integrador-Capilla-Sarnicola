@@ -7,7 +7,7 @@ class Home extends Component{
     }
 
     componentDidMount(){
-        fetch('')
+        fetch('https://api.themoviedb.org/3/movie/popular?api_key=b01c81adb05b13c4189ffba95ed51e5f')
         .then((resp) => resp.json())
         .then((data) => console.log('error data', data))
         .catch((error) => console.log('error fetch', error))
