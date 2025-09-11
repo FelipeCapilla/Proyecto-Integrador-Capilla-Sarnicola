@@ -4,10 +4,11 @@ import Formulario from "../formulario/Formulario";
 
 function Header(){
     return(
+        <React.Fragment>
+        <h1>UdeSA Movies</h1>
         <nav>
             <ul class="nav nav-tabs my-4">
 
-                <h2>Nombre de la Pagina</h2>
 
                 <li class="nav-item">
                     <Link class="nav-link" to='/' >Home</Link>
@@ -24,6 +25,8 @@ function Header(){
                 <Formulario/>
             </ul>
         </nav>
+        </React.Fragment>
+       
     )
 }
 

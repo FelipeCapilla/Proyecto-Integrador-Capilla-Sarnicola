@@ -15,6 +15,10 @@ class Card extends Component{
                     <a href="" class="btn alert-primary">🩶</a>
                 </div>
             </article>
+
+            
+
+
         )
     }
 }
