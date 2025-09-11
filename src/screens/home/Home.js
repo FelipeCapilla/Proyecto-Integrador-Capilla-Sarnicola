@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Cards from "../../components/peliculas/Cards";
+import Series from "../../components/series/Series";
 
 
 class Home extends Component{
@@ -18,8 +19,11 @@ class Home extends Component{
         return(
             <section>
             <h2 class="alert alert-primary">Popular movies this week</h2>
-            <Cards />
+            <Cards/>
+            <h2 class="alert alert-warning">Popular series this week</h2>
+            <Series/>
             </section>
+
         )
     }
 }
