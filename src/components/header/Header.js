@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom'
+import Formulario from "../formulario/Formulario";
 
 function Header(){
     return(
         <nav>
             <ul class="nav nav-tabs my-4">
-                
+
                 <h2>Nombre de la Pagina</h2>
 
                 <li class="nav-item">
@@ -20,6 +21,7 @@ function Header(){
                 <li class="nav-item">
                     <Link class="nav-link" to='/favorites' >Favoritas</Link>
                 </li>
+                <Formulario/>
             </ul>
         </nav>
     )
