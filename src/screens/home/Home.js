@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Cards from "../../components/peliculas/Cards";
 
+
 class Home extends Component{
     constructor(props){
         super(props)
