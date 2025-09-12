@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Serie from './Serie'
 
-class Series extends Component {
+class LaSeries extends Component {
   render() {
     return (
         <section class="row cards all-series" id="series">
@@ -11,4 +11,4 @@ class Series extends Component {
   }
 }
 
-export default Series
+export default LaSeries;

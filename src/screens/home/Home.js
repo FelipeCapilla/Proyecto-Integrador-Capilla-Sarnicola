@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Cards from "../../components/peliculas/Cards";
-import Series from "../../components/series/Series";
+import LaSeries from "../../components/series/LaSeries";
 
 
 class Home extends Component{
@@ -20,8 +20,14 @@ class Home extends Component{
             <section>
             <h2 class="alert alert-primary">Popular movies this week</h2>
             <Cards/>
+            <Cards/>
+            <Cards/>
+            <Cards/>
             <h2 class="alert alert-warning">Popular series this week</h2>
-            <Series/>
+            <LaSeries/>
+            <LaSeries/>
+            <LaSeries/>
+            <LaSeries/>
             </section>
 
         )
