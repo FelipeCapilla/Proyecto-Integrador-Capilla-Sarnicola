@@ -6,6 +6,9 @@ class LaSeries extends Component {
     return (
         <section class="row cards all-series" id="series">
             <Serie/>
+            <Serie/>
+            <Serie/>
+            <Serie/>
         </section>
     )
   }

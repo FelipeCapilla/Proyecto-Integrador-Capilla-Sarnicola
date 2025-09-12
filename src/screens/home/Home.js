@@ -20,13 +20,7 @@ class Home extends Component{
             <section>
             <h2 class="alert alert-primary">Popular movies this week</h2>
             <Cards/>
-            <Cards/>
-            <Cards/>
-            <Cards/>
             <h2 class="alert alert-warning">Popular series this week</h2>
-            <LaSeries/>
-            <LaSeries/>
-            <LaSeries/>
             <LaSeries/>
             </section>
 
