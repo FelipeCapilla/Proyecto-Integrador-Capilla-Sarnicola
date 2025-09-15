@@ -7,7 +7,7 @@ class Home extends Component{
     constructor(props){
         super(props)
         this.state = {
-            personajes: [],
+            personajes: []
         }
     }
 
@@ -19,7 +19,7 @@ class Home extends Component{
     }
 
     cargarMas(){
-        fetch(`https://api.themoviedb.org/3/movie/popular?page=${this.state.paginaALlamar}`)
+        fetch(``)
         .then(reps => reps.json())
         .then(data => {
             console.log('data', data)
