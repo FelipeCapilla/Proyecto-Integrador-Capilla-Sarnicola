@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import Movies from "./screens/movies/Movies";
 import Series from "./screens/series/Series";
 import Favorites from "./screens/favorites/Favorites";
+import Resultados from "./screens/resultados/Resultados";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/movies' component={Movies} exact={true} />
         <Route path='/series' component={Series} exact={true} />
         <Route path='/favorites' component={Favorites} exact={true} />
+        <Route path='/resultados/:busqueda' component={Resultados} exact={true} />
       </Switch>
       <Footer />
     </React.Fragment>

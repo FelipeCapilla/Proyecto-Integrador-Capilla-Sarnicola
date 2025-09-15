@@ -2,13 +2,21 @@ import React from "react";
 import Card from "./Card";
 
 
-function Cards(){
+function Cards(props){
     return(
-        <section class="row cards" id="movies">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+        <section class="row cards all-movies" id="movies">
+            {
+                props.personajes.map(
+                    (elm, idx) =>
+                    <Card
+                        key={idx + elm.name}
+                        id={elm.id} 
+                        img={elm.image} 
+                        name={elm.name} 
+                        description={elm.description}
+                    />
+                )
+            }
         </section>
     )
 }

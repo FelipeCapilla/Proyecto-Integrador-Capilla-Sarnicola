@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 
-
-
 class Formulario extends Component {
-
     constructor(props){
         super(props)
         this.state = {
@@ -13,7 +10,7 @@ class Formulario extends Component {
 
     controlarForm(evento){
         evento.preventDefault()
-        this.props.history.push('/resultados' + this.state.busqueda)
+        this.props.history.push('/resultados/' + this.state.busqueda)
     }
 
     controlarInput(evento){
@@ -26,7 +23,7 @@ class Formulario extends Component {
     return (
         <form onSubmit={(evento) => this.controlarForm(evento)}>
             <input onChange={(evento) => this.controlarInput(evento)}/>
-            <button> Buscar</button>
+            <button>Buscar</button>
         </form>
     )
   }
