@@ -32,10 +32,10 @@ class Home extends Component{
     render(){
         return(
             <section>
-            <h2 class="alert alert-primary">Popular movies this week</h2>
+            <h2 className="alert alert-primary">Popular movies this week</h2>
             <Cards/>
             <button onClick={() => this.cargarMas()}> Cargar mas Peliculas</button>
-            <h2 class="alert alert-warning">Popular series this week</h2>
+            <h2 className="alert alert-warning">Popular series this week</h2>
             <LaSeries/>
             <button onClick={() => this.cargarMas()}> Cargar mas Series</button>
             </section>

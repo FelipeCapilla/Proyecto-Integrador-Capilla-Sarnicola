@@ -7,20 +7,20 @@ function Header(){
         <React.Fragment>
         <h1>UdeSA Movies</h1>
         <nav>
-            <ul class="nav nav-tabs my-4">
+            <ul className="nav nav-tabs my-4">
 
 
-                <li class="nav-item">
-                    <Link class="nav-link" to='/' >Home</Link>
+                <li className="nav-item">
+                    <Link className="nav-link" to='/' >Home</Link>
                 </li>
-                <li class="nav-item">
-                    <Link class="nav-link" to='/movies' >Peliculas</Link>
+                <li className="nav-item">
+                    <Link className="nav-link" to='/movies' >Peliculas</Link>
                 </li>
-                <li class="nav-item">
-                    <Link class="nav-link" to='/series' >Series</Link>
+                <li className="nav-item">
+                    <Link className="nav-link" to='/series' >Series</Link>
                 </li>
-                <li class="nav-item">
-                    <Link class="nav-link" to='/favorites' >Favoritas</Link>
+                <li className="nav-item">
+                    <Link className="nav-link" to='/favorites' >Favoritas</Link>
                 </li>
                 <Formulario/>
             </ul>

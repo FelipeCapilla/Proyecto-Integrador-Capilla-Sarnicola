@@ -4,7 +4,7 @@ import Card from "./Card";
 
 function Cards(){
     return(
-        <section class="row cards" id="movies">
+        <section className="row cards" id="movies">
             <Card />
             <Card />
             <Card />
