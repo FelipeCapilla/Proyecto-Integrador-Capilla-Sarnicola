@@ -3,7 +3,7 @@ import Card from "./Card";
 
 function Cards(props){
     return(
-        <section class="row cards all-movies" id="movies">
+        <section className="row cards all-movies" id="movies">
             {
                 props.personajes.map(
                     (elm, idx) =>

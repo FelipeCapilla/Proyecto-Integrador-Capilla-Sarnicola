@@ -63,12 +63,12 @@ class Card extends Component{
 
     render(){
         return(
-            <article class="single-card-movie">
-                <img src={this.props.img} class="card-img-top" alt="" />
-                <div class="cardBody">
-                    <h5 class="card-title">{this.props.name}</h5>
-                    <p class="card-text">{this.props.description}</p>
-                    {this.state.verMas ?  <a href="/movies" class="btn btn-primary">Ver mas</a> : ""}
+            <article className="single-card-movie">
+                <img src={this.props.img} className="card-img-top" alt="" />
+                <div className="cardBody">
+                    <h5 className="card-title">{this.props.name}</h5>
+                    <p className="card-text">{this.props.description}</p>
+                    {this.state.verMas ?  <a href="/movies" className="btn btn-primary">Ver mas</a> : ""}
                 </div>
             </article>
         )
