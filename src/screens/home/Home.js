@@ -6,6 +6,12 @@ import LaSeries from "../../components/series/LaSeries";
 class Home extends Component{
     constructor(props){
         super(props)
+        this.state = {
+            personajes: [],
+            backup: [],
+            pedidoInicialCompleto: false,
+            paginaALlamar: 1
+        }
     }
 
     componentDidMount(){
@@ -15,13 +21,28 @@ class Home extends Component{
         .catch((error) => console.log('error fetch', error))
     }
 
+    cargarMas(){
+        fetch(`https://api.themoviedb.org/3/movie/popular?page=${this.state.paginaALlamar}`)
+        .then(reps => reps.json())
+        .then(data => {
+            console.log('data', data)
+            this.setState({
+            personajes: this.state.personajes.concat(data.results),
+            backup: this.state.backup.concat(data.results),
+            paginaALlamar: this.state.paginaALlamar + 1
+        })})
+        .catch(error => console.log(error))
+    }
+
     render(){
         return(
             <section>
             <h2 class="alert alert-primary">Popular movies this week</h2>
             <Cards/>
+            <button onClick={() => this.cargarMas()}> Cargar mas Peliculas</button>
             <h2 class="alert alert-warning">Popular series this week</h2>
             <LaSeries/>
+            <button onClick={() => this.cargarMas()}> Cargar mas Series</button>
             </section>
 
         )
