@@ -8,9 +8,6 @@ class Home extends Component{
         super(props)
         this.state = {
             personajes: [],
-            backup: [],
-            pedidoInicialCompleto: false,
-            paginaALlamar: 1
         }
     }
 
@@ -27,9 +24,7 @@ class Home extends Component{
         .then(data => {
             console.log('data', data)
             this.setState({
-            personajes: this.state.personajes.concat(data.results),
-            backup: this.state.backup.concat(data.results),
-            paginaALlamar: this.state.paginaALlamar + 1
+            personajes: this.state.personajes.concat(data.results)
         })})
         .catch(error => console.log(error))
     }
