@@ -8,13 +8,57 @@ class Card extends Component{
             verMas: false,
             textoBoton: "Ver mas"
         }
-    }    
+    }
+
+    componentDidMount(){
+        let recuperoPersonaje = localStorage.getItem('personaje')
+        let personajeRecuperado = JSON.parse(recuperoPersonaje)
+        if (personajeRecuperado !== null) {
+            this.setState({esFav: true})
+        }
+    }
 
     cambiarValores(){
         this.setState({
             verMas: !this.state.verMas,
             textoBoton: this.state.verMas ? "ver mas" : "ver menos"
         })
+    }
+
+    agregarFav(id){
+        let recuperoPersonaje = localStorage.getItem('personajes')
+        let personajeRecuperado = JSON.parse(recuperoPersonaje)
+    
+        if (recuperoPersonaje === null) {
+          let personajesString = JSON.stringify([id])
+          localStorage.setItem('personajes', personajesString )
+          this.setState({esFav: true})
+        }
+        else{
+            personajeRecuperado.push(id)
+          localStorage.setItem('personajes', JSON.stringify(personajeRecuperado) )
+          this.setState({esFav: true})
+        }
+    }
+
+    eliminarFav(id){
+        let recuperoPersonaje = localStorage.getItem('personajes')
+        let personajeRecuperado = JSON.parse(recuperoPersonaje)
+    
+        if (recuperoPersonaje === null) {
+          alert('No hay personajes en favoritos')
+        }
+        else{
+          let nuevosFav = personajeRecuperado.filter((elm) => elm !== id)
+          if (nuevosFav.length === 0) {
+            localStorage.removeItem('personajes')
+          }
+          else{
+            localStorage.setItem('personajes', JSON.stringify(nuevosFav))
+          }
+          this.setState({esFav: false})
+        
+        }
     }
 
     render(){

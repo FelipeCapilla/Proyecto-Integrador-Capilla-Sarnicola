@@ -4,7 +4,7 @@ import Serie from './Serie'
 class LaSeries extends Component {
   render() {
     return (
-        <section class="row cards all-series" id="series">
+        <section className="row cards all-series" id="series">
             <Serie/>
             <Serie/>
             <Serie/>

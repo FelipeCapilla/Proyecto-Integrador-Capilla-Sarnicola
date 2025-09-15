@@ -1,7 +1,6 @@
 import React from "react";
 import Card from "./Card";
 
-
 function Cards(props){
     return(
         <section class="row cards all-movies" id="movies">
