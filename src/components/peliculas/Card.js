@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 class Card extends Component{
     constructor(props){
@@ -11,10 +11,10 @@ class Card extends Component{
     }
 
     componentDidMount(){
-        let recuperoPersonaje = localStorage.getItem('personaje')
-        let personajeRecuperado = JSON.parse(recuperoPersonaje)
-        if (personajeRecuperado !== null) {
-            if (personajeRecuperado.include(this.props.id)) {
+        let recuperoPelicula = localStorage.getItem('peliculas')
+        let peliculaRecuperada = JSON.parse(recuperoPelicula)
+        if (peliculaRecuperada !== null) {
+            if (peliculaRecuperada.include(this.props.id)) {
             this.setState({esFav: true})
             }
         }
@@ -28,35 +28,35 @@ class Card extends Component{
     }
 
     agregarFav(id){
-        let recuperoPersonaje = localStorage.getItem('personajes')
-        let personajeRecuperado = JSON.parse(recuperoPersonaje)
+        let recuperoPelicula = localStorage.getItem('peliculas')
+        let peliculaRecuperada = JSON.parse(recuperoPelicula)
     
-        if (recuperoPersonaje === null) {
-          let personajesString = JSON.stringify([id])
-          localStorage.setItem('personajes', personajesString )
+        if (recuperoPelicula === null) {
+          let peliculasString = JSON.stringify([id])
+          localStorage.setItem('peliculas', peliculasString )
           this.setState({esFav: true})
         }
         else{
-            personajeRecuperado.push(id)
-          localStorage.setItem('personajes', JSON.stringify(personajeRecuperado) )
+            peliculaRecuperada.push(id)
+          localStorage.setItem('peliculas', JSON.stringify(peliculaRecuperada) )
           this.setState({esFav: true})
         }
     }
 
     eliminarFav(id){
-        let recuperoPersonaje = localStorage.getItem('personajes')
-        let personajeRecuperado = JSON.parse(recuperoPersonaje)
+        let recuperoPelicula = localStorage.getItem('peliculas')
+        let peliculaRecuperada = JSON.parse(recuperoPelicula)
     
-        if (recuperoPersonaje === null) {
-          alert('No hay personajes en favoritos')
+        if (recuperoPelicula === null) {
+          alert('No hay peliculas en favoritos')
         }
         else{
-          let nuevosFav = personajeRecuperado.filter((elm) => elm !== id)
+          let nuevosFav = peliculaRecuperada.filter((elm) => elm !== id)
           if (nuevosFav.length === 0) {
-            localStorage.removeItem('personajes')
+            localStorage.removeItem('peliculas')
           }
           else{
-            localStorage.setItem('personajes', JSON.stringify(nuevosFav))
+            localStorage.setItem('peliculas', JSON.stringify(nuevosFav))
           }
           this.setState({esFav: false})
         
@@ -66,13 +66,21 @@ class Card extends Component{
     render(){
         return(
             <article className="single-card-movie">
-            <img src={`https://image.tmdb.org/t/p/w500$${this.props.poster_path}`} className="card-img-top" alt="" />
+            <img src={`https://image.tmdb.org/t/p/w500${this.props.poster_path}`} className="card-img-top" alt="" />
             <div className="cardBody">
-                <h5 className="card-title">{this.props.name}</h5>
-                <p className="card-text">{this.props.description}</p>
-                {this.state.verMas ?  <a href="/movies" className="btn btn-primary">Ver mas</a> : ""}
+                <h5 className="card-title">{this.props.title}</h5>
+                {this.state.verMas ?  <p>{this.props.overview}</p> : ""}
+                <button onClick={() => this.cambiarValores()}>{this.state.textoBoton}</button>
+                <Link to={`/detail/id/${this.props.id}`}><button>Ver detalle</button></Link>
             </div>
-        </article>
+            {
+                this.state.esFav 
+                ? 
+                <button onClick={() => this.eliminarFav(this.props.id)}>Eliminar Favorito</button>
+                : 
+                <button onClick={() => this.agregarFav(this.props.id)}>Agregar Favorito</button>
+            }
+            </article>
         )
     }
 }

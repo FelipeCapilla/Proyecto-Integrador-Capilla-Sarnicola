@@ -5,7 +5,7 @@ export default class Detalle extends Component {
     constructor(props){
         super(props)
         this.state = {
-            personaje: [],
+            peliculas: [],
             id: this.props.match.params.id,
             cargando: true
         }
@@ -15,7 +15,7 @@ export default class Detalle extends Component {
         fetch(`https://api.themoviedb.org/3/movie/${this.state.id}`)
         .then((resp) => resp.json())
         .then((data) => this.setState({
-            personaje: data,
+            peliculas: data,
             cargando: false
         }))
         .catch((error) => console.log('error fetch', error))
@@ -30,10 +30,10 @@ export default class Detalle extends Component {
                     <p>cargando...</p>
                     :
                     <Card
-                    id={this.state.personaje.id}
-                    img={this.state.personaje.image}
-                    name={this.state.personaje.name}
-                    description={this.state.description}
+                    id={this.state.peliculas.id}
+                    poster_path={this.state.peliculas.poster_path}
+                    title={this.state.peliculas.title}
+                    overview={this.state.peliculas.overview}
                     />    
                 }
             </section>

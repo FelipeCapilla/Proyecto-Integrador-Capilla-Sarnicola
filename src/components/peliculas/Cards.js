@@ -5,14 +5,14 @@ function Cards(props){
     return(
         <section className="row cards all-movies" id="movies">
             {
-                props.personajes.map(
+                props.peliculas.map(
                     (elm, idx) =>
                     <Card
-                        key={idx + elm.name}
+                        key={idx + elm.title}
                         id={elm.id} 
-                        img={elm.poster_path} 
-                        name={elm.name} 
-                        description={elm.description}
+                        poster_path={elm.poster_path} 
+                        title={elm.title} 
+                        overview={elm.overview}
                     />
                 )
             }

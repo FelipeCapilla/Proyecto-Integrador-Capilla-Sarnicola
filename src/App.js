@@ -5,7 +5,6 @@ import Header from "./components/header/Header";
 import Home from "./screens/home/Home";
 import Footer from "./components/footer/Footer";
 import Movies from "./screens/movies/Movies";
-import Series from "./screens/series/Series";
 import Favorites from "./screens/favorites/Favorites";
 import Resultados from "./screens/resultados/Resultados";
 
@@ -17,7 +16,6 @@ function App() {
       <Switch>
         <Route path='/' component={Home} exact={true} />
         <Route path='/movies' component={Movies} exact={true} />
-        <Route path='/series' component={Series} exact={true} />
         <Route path='/favorites' component={Favorites} exact={true} />
         <Route path='/resultados/:busqueda' component={Resultados} exact={true} />
       </Switch>
