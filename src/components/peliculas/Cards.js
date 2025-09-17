@@ -10,7 +10,7 @@ function Cards(props){
                     <Card
                         key={idx + elm.name}
                         id={elm.id} 
-                        img={elm.image} 
+                        img={elm.poster_path} 
                         name={elm.name} 
                         description={elm.description}
                     />

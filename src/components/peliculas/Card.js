@@ -14,7 +14,9 @@ class Card extends Component{
         let recuperoPersonaje = localStorage.getItem('personaje')
         let personajeRecuperado = JSON.parse(recuperoPersonaje)
         if (personajeRecuperado !== null) {
+            if (personajeRecuperado.include(this.props.id)) {
             this.setState({esFav: true})
+            }
         }
     }
 
@@ -64,13 +66,13 @@ class Card extends Component{
     render(){
         return(
             <article className="single-card-movie">
-                <img src={this.props.img} className="card-img-top" alt="" />
-                <div className="cardBody">
-                    <h5 className="card-title">{this.props.name}</h5>
-                    <p className="card-text">{this.props.description}</p>
-                    {this.state.verMas ?  <a href="/movies" className="btn btn-primary">Ver mas</a> : ""}
-                </div>
-            </article>
+            <img src={`https://image.tmdb.org/t/p/w500$${this.props.poster_path}`} className="card-img-top" alt="" />
+            <div className="cardBody">
+                <h5 className="card-title">{this.props.name}</h5>
+                <p className="card-text">{this.props.description}</p>
+                {this.state.verMas ?  <a href="/movies" className="btn btn-primary">Ver mas</a> : ""}
+            </div>
+        </article>
         )
     }
 }
