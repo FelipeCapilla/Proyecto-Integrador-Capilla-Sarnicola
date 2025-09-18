@@ -17,6 +17,9 @@ function Header(){
                     <Link className="nav-link" to='/movies' >Peliculas</Link>
                 </li>
                 <li className="nav-item">
+                <Link className="nav-link" to='/series' >Series</Link>
+                </li>
+                <li className="nav-item">
                     <Link className="nav-link" to='/favorites' >Favoritas</Link>
                 </li>
                 <Formulario/>

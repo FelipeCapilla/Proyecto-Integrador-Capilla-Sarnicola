@@ -78,7 +78,7 @@ class Card extends Component{
                 ? 
                 <button onClick={() => this.eliminarFav(this.props.id)} className="btn btn-primary">Eliminar Favorito</button>
                 : 
-                <button onClick={() => this.agregarFav(this.props.id)} className="btn btn-primary">Agregar Favorito</button>
+                <button onClick={() => this.agregarFav(this.props.id)} className="btn btn-primary">🩶</button>
             }
             </article>
         )

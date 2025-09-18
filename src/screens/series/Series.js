@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
-class Movies extends Component {
-    
+class Series extends Component {
   render() {
     return (
       <div>
@@ -11,4 +10,4 @@ class Movies extends Component {
   }
 }
 
-export default Movies
+export default Series
