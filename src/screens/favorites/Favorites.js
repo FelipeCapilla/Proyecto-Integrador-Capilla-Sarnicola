@@ -63,7 +63,7 @@ class Favorites extends Component{
                         />
                         
                     )
-            
+                    
                 }
                 </div>
                 
