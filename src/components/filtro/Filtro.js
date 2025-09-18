@@ -28,7 +28,7 @@ class Filtro extends Component {
       <form onSubmit={(evento) => this.controlarForm(evento)}>
         <input onChange={(evento) => this.controlarInput(evento)}/>
         <button> Buscar</button>
-        </form>
+      </form>
     )
   }
 }

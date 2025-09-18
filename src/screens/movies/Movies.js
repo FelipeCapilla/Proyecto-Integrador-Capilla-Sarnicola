@@ -29,7 +29,14 @@ class Movies extends Component {
     }
 
     cargarMas(){
-
+        fetch(`https://api.themoviedb.org/3/movie/popular?page=${this.state.paginaALlamar}`)
+        .then(resp => resp.json())
+        .then(data => this.setState({
+            peliculas: this.state.peliculas.concat(data.results),
+            backup: this.state.backup.concat(data.results),
+            paginaALlamar: this.state.paginaALlamar + 1
+        }))
+        .catch(error => console.log('error fetch', error))
     }
 
     filtrarPeliculas(textoAFiltrar){
@@ -48,16 +55,14 @@ class Movies extends Component {
             {
                 this.state.pedidoInicialCompleto ?
                 <div>
-                    <h2 className="alert alert-primary">Popular series this week</h2>
+                    <h2 className="alert alert-primary">Popular movies this week</h2>
                     <Cards peliculas={this.state.peliculas}/>
+                    <button onClick={() => this.cargarMas()}>Cargar mas peliculas</button>
                 </div>
                 :
                 <h2>Cargando...</h2>
             }
-            
-            
             </article>
-
         </section>
         </div>
     )

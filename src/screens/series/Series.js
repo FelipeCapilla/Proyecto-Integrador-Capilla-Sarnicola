@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Tarjetas from '../../components/series/Tarjetas'
+import Filtro from '../../components/filtro/Filtro'
 
 class Series extends Component {
 
@@ -27,7 +28,14 @@ class Series extends Component {
     }
 
     cargarMas(){
-
+      fetch(`https://api.themoviedb.org/3/tv/popular?page=${this.state.paginaALlamar}`)
+      .then(resp => resp.json())
+      .then(data => this.setState({
+        series: this.state.series.concat(data.results),
+        backup: this.state.backup.concat(data.results),
+        paginaALlamar: this.state.paginaALlamar + 1
+      }))
+      .catch(error => console.log('error fetch', error))
     }
 
     filtrarSeries(textoAFiltrar){
@@ -39,10 +47,23 @@ class Series extends Component {
 
   render() {
     return (
-      <section className="row cards" id="tv-show">
-        <h2 className="alert alert-primary">Popular series this week</h2>
-                <Tarjetas series={this.state.series}/>
-      </section>
+      <div>
+        <Filtro filtrar = {(textoAFiltrar) => this.filtrarSeries(textoAFiltrar)}/>
+        <section className="row cards" id="movies">
+          <article>
+          {
+            this.state.pedidoInicialCompleto ?
+            <div>
+              <h2 className="alert alert-primary">Popular series this week</h2>
+              <Tarjetas series={this.state.series}/>
+              <button onClick={() => this.cargarMas()}>Cargar mas series</button>
+            </div>
+            :
+            <h2>Cargando...</h2>
+          }
+          </article>
+        </section>
+      </div>      
     )
   }
 }

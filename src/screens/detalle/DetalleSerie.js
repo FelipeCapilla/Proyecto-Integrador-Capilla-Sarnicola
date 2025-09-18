@@ -1,21 +1,21 @@
 import React, { Component } from 'react'
-import Card from '../../components/peliculas/Card'
+import Tarjeta from '../../components/series/Tarjeta'
 
-class DetallePelicula extends Component {
+class DetalleSerie extends Component {
     constructor(props){
         super(props)
         this.state = {
-            peliculas: [],
+            series: [],
             id: this.props.match.params.id,
             cargando: true
         }
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}`)
+        fetch(`https://api.themoviedb.org/3/tv/${this.state.id}`)
         .then((resp) => resp.json())
         .then((data) => this.setState({
-            peliculas: data,
+            series: data,
             cargando: false
         }))
         .catch((error) => console.log('error fetch', error))
@@ -30,12 +30,12 @@ class DetallePelicula extends Component {
                     <p>cargando...</p>
                     :
                     <Card
-                    id={this.state.peliculas.id}
-                    poster_path={this.state.peliculas.poster_path}
-                    title={this.state.peliculas.title}
-                    vote_average={this.state.peliculas.vote_average}
-                    first_air_date= {this.state.peliculas.first_air_date}
-                    overview={this.state.peliculas.overview}
+                    id={this.state.series.id}
+                    poster_path={this.state.series.poster_path}
+                    title={this.state.series.title}
+                    vote_average={this.state.series.vote_average}
+                    first_air_date= {this.state.series.first_air_date}
+                    overview={this.state.series.overview}
                     />    
                 }
             </section>
@@ -43,4 +43,4 @@ class DetallePelicula extends Component {
     }
 }
 
-export default DetallePelicula;
+export default DetalleSerie;
