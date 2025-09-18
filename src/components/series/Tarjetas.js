@@ -11,7 +11,7 @@ function Tarjetas(props) {
                         key={idx + elm.title}
                         id={elm.id} 
                         poster_path={elm.poster_path} 
-                        title={elm.title} 
+                        name={elm.name} 
                         overview={elm.overview}
                     />
                 )

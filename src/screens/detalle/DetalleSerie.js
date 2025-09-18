@@ -32,7 +32,7 @@ class DetalleSerie extends Component {
                     <Card
                     id={this.state.series.id}
                     poster_path={this.state.series.poster_path}
-                    title={this.state.series.title}
+                    name={this.state.series.name}
                     vote_average={this.state.series.vote_average}
                     first_air_date= {this.state.series.first_air_date}
                     overview={this.state.series.overview}
