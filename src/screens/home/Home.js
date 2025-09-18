@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Cards from "../../components/peliculas/Cards";
+import Tarjetas from "../../components/series/Tarjetas";
 
 class Home extends Component{
     constructor(props){
@@ -27,13 +28,14 @@ class Home extends Component{
 
     render(){
         return(
-            <section class="row cards" id="movies">
+            <section className="row cards" id="movies">
                 {
                     this.state.pedidoInicialCompleto ?
                     <article>
                     <h2 className="alert alert-primary">Popular movies this week</h2>
                     <Cards peliculas={this.state.peliculas} />
                     <h2 className="alert alert-primary">Popular series this week</h2>
+                    <Tarjetas series={this.state.series}/>
                     </article>
                     :
                     <h2>Cargando...</h2>
