@@ -49,7 +49,7 @@ class Favorites extends Component{
 
     render() {
         return (
-            
+                <section className="row cards" id="movies">
                 <div>
                 {
                     
@@ -63,9 +63,24 @@ class Favorites extends Component{
                         />
                         
                     )
-                    
+
                 }
                 </div>
+                <div>
+                {
+                    this.state.favorito.map((elm, idx) =>
+                        <Tarjeta
+                        key={idx + elm.title}
+                        id={elm.id} 
+                        poster_path={elm.poster_path} 
+                        name={elm.name} 
+                        overview={elm.overview}
+                    />
+                    )
+                }
+
+                </div>
+                </section>
                 
             
         )
