@@ -1,16 +1,19 @@
 import React, {Component} from "react";
 import Card from "../../components/peliculas/Card";
+import Tarjeta from "../../components/series/Tarjeta";
 
 class Favorites extends Component{
     constructor(props){
         super(props)
         this.state = {
-            favoritos: []
+            favoritos: [],
+            favorito: []
         }
     }
 
     componentDidMount(){
         let peliculaFavorita = localStorage.getItem("favoritos")
+        let serieFavorita = localStorage.getItem("favorito")
         if (peliculaFavorita !== null) {
             let peliculaARenderizar = JSON.parse(peliculaFavorita)
             if (peliculaARenderizar.length > 0) {
@@ -26,12 +29,30 @@ class Favorites extends Component{
                 )
             }
         }
+        if (serieFavorita !== null) {
+            let serieARenderizar = JSON.parse(serieFavorita)
+            if (serieARenderizar.length > 0) {
+                let serieVacia = []
+                serieARenderizar.map((elm) => 
+                    fetch(`https://api.themoviedb.org/3/tv/${elm}&api_key=b01c81adb05b13c4189ffba95ed51e5f`)
+                    .then((resp) => resp.json())
+                    .then((data) =>{ 
+                        serieVacia.push(data)
+                        this.setState({favorito: serieVacia})
+                    })
+                    .catch((error) => console.log('error fetch', error))
+                )
+            }
+        }
+
     }
 
     render() {
         return (
-            <div>
+            
+                <div>
                 {
+                    
                     this.state.favoritos.map((elm, key) => 
                         <Card
                         key={elm.title + key}
@@ -40,9 +61,13 @@ class Favorites extends Component{
                         title={elm.title}
                         overview={elm.overview}
                         />
+                        
                     )
+            
                 }
-            </div>
+                </div>
+                
+            
         )
     }
 }
