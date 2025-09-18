@@ -71,7 +71,7 @@ class Card extends Component{
                 <h5 className="card-title">{this.props.title}</h5>
                 {this.state.verMas ?  <p className="card-text">{this.props.overview}</p> : ""}
                 <button onClick={() => this.cambiarValores()} className="btn btn-primary">{this.state.textoBoton}</button>
-                <Link to={`/detalle/${this.props.id}`}><button className="btn btn-primary">Ver detalle</button></Link>
+                <Link to={`/detallemovie/${this.props.id}`}><button className="btn btn-primary">Ver detalle</button></Link>
             </div>
             {
                 this.state.esFav 

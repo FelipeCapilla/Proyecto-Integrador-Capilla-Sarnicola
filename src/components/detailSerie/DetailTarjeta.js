@@ -29,7 +29,6 @@ class DetailTarjeta extends Component {
 
     agregarFav(id){
         let recuperoSerie = localStorage.getItem('series')
-        
         if (recuperoSerie === null) {
           let seriesString = JSON.stringify([id])
           localStorage.setItem('series', seriesString )
@@ -45,7 +44,6 @@ class DetailTarjeta extends Component {
 
     eliminarFav(id){
         let recuperoSerie = localStorage.getItem('series')
-        
         if (recuperoSerie === null) {
           alert('No hay series en favoritos')
         }
@@ -63,8 +61,8 @@ class DetailTarjeta extends Component {
         }
     }
 
-  render() {
-    return (
+    render() {
+        return (
             <article className="single-card-tv">
             <img src={`https://image.tmdb.org/t/p/w500${this.props.poster_path}`} class="card-img-top" alt=""/>
             <div className="cardBody">

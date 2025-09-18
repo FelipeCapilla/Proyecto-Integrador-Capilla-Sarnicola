@@ -8,7 +8,8 @@ import Movies from "./screens/movies/Movies";
 import Series from "./screens/series/Series";
 import Favorites from "./screens/favorites/Favorites";
 import Resultados from "./screens/resultados/Resultados";
-import Detalle from "./screens/detalle/DetallePelicula";
+import DetalleMovie from "./screens/detalle/DetallePelicula"
+import DetalleSerie from "./screens/detalle/DetalleSerie";
 
 
 
@@ -22,7 +23,8 @@ function App() {
         <Route path='/series' component={Series} exact={true} />
         <Route path='/favorites' component={Favorites} exact={true} />
         <Route path='/resultados/:busqueda' component={Resultados} exact={true} />
-        <Route path='/detalle/:id' component={Detalle} />
+        <Route path='/detallemovie/:id' component={DetalleMovie} />
+        <Route path='/detalleserie/:id' component={DetalleSerie} />
       </Switch>
       <Footer />
     </React.Fragment>

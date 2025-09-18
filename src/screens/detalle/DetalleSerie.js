@@ -12,7 +12,7 @@ class DetalleSerie extends Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/tv/${this.state.id}&api_key=b01c81adb05b13c4189ffba95ed51e5f`)
+        fetch(`https://api.themoviedb.org/3/tv/${this.state.id}?api_key=b01c81adb05b13c4189ffba95ed51e5f`)
         .then((resp) => resp.json())
         .then((data) => this.setState({
             series: data,
@@ -22,6 +22,7 @@ class DetalleSerie extends Component {
     }
 
     render() {
+        console.log("render detalle: ", this.state);
         return (
             <section class="row">
                 {
