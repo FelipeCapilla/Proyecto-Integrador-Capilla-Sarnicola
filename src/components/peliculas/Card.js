@@ -70,15 +70,15 @@ class Card extends Component{
             <div className="cardBody">
                 <h5 className="card-title">{this.props.title}</h5>
                 {this.state.verMas ?  <p>{this.props.overview}</p> : ""}
-                <button onClick={() => this.cambiarValores()}>{this.state.textoBoton}</button>
-                <Link to={`/detail/id/${this.props.id}`}><button>Ver detalle</button></Link>
+                <button onClick={() => this.cambiarValores()} className="btn btn-primary">{this.state.textoBoton}</button>
+                <Link to={`/detail/id/${this.props.id}`}><button className="btn btn-primary">Ver detalle</button></Link>
             </div>
             {
                 this.state.esFav 
                 ? 
-                <button onClick={() => this.eliminarFav(this.props.id)}>Eliminar Favorito</button>
+                <button onClick={() => this.eliminarFav(this.props.id)} className="btn btn-primary">Eliminar Favorito</button>
                 : 
-                <button onClick={() => this.agregarFav(this.props.id)}>Agregar Favorito</button>
+                <button onClick={() => this.agregarFav(this.props.id)} className="btn btn-primary">Agregar Favorito</button>
             }
             </article>
         )
