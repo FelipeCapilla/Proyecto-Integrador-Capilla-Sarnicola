@@ -33,8 +33,8 @@ class Tarjeta extends Component {
         let serieRecuperada = JSON.parse(recuperoSerie)
     
         if (recuperoSerie === null) {
-          let peliculasString = JSON.stringify([id])
-          localStorage.setItem('series', peliculasString )
+          let seriesString = JSON.stringify([id])
+          localStorage.setItem('series', seriesString )
           this.setState({esFav: true})
         }
         else{
@@ -67,9 +67,9 @@ class Tarjeta extends Component {
   render() {
     return (
             <article className="single-card-tv">
-            <img src={``} className="" alt=""/>
+            <img src={`https://image.tmdb.org/t/p/w500${this.props.poster_path}`} class="card-img-top" alt=""/>
             <div className="cardBody">
-                <h5 className="card-title">{}</h5>
+                <h5 className="card-title">{this.props.title}</h5>
                 {this.state.verMas ?  <p>{this.props.overview}</p> : ""}
                 <button onClick={() => this.cambiarValores()}>{this.state.textoBoton}</button>
                 <Link to={`/detail/id/${this.props.id}`}><button>Ver detalle</button></Link>
