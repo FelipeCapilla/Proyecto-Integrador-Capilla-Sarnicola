@@ -47,23 +47,23 @@ class Series extends Component {
 
   render() {
     return (
-      <div>
-        <Filtro filtrar = {(textoAFiltrar) => this.filtrarSeries(textoAFiltrar)}/>
-        <section className="row cards" id="movies">
-          <article>
-          {
-            this.state.pedidoInicialCompleto ?
-            <div>
-              <h2 className="alert alert-primary">Popular series this week</h2>
-              <Tarjetas series={this.state.series}/>
-              <button onClick={() => this.cargarMas()}>Cargar mas series</button>
-            </div>
-            :
-            <h2>Cargando...</h2>
-          }
-          </article>
-        </section>
-      </div>      
+        <div>
+            <Filtro filtrar = {(textoAFiltrar) => this.filtrarSeries(textoAFiltrar)}/>
+            <section className="row cards" id="movies">
+            <article>
+            {
+                this.state.pedidoInicialCompleto ?
+                <div>
+                <h2 className="alert alert-primary">Popular series this week</h2>
+                <Tarjetas series={this.state.series}/>
+                <button onClick={() => this.cargarMas()}>Cargar mas series</button>
+                </div>
+                :
+                <h2>Cargando...</h2>
+            }
+            </article>
+            </section>
+        </div>      
     )
   }
 }

@@ -41,7 +41,7 @@ class Movies extends Component {
 
     filtrarPeliculas(textoAFiltrar){
         const filtrado = this.state.backup.filter(
-            (elm) => elm.name.toLowerCase().includes(textoAFiltrar.toLowerCase())
+            (elm) => elm.title.toLowerCase().includes(textoAFiltrar.toLowerCase())
         )
         this.setState({peliculas:filtrado})
     }
