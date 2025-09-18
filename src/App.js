@@ -22,7 +22,7 @@ function App() {
         <Route path='/series' component={Series} exact={true} />
         <Route path='/favorites' component={Favorites} exact={true} />
         <Route path='/resultados/:busqueda' component={Resultados} exact={true} />
-        <Route path='/detalle' component={Detalle} />
+        <Route path='/detalle/:id' component={Detalle} />
       </Switch>
       <Footer />
     </React.Fragment>

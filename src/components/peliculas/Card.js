@@ -12,9 +12,9 @@ class Card extends Component{
 
     componentDidMount(){
         let recuperoPelicula = localStorage.getItem('peliculas')
-        let peliculaRecuperada = JSON.parse(recuperoPelicula)
-        if (peliculaRecuperada !== null) {
-            if (peliculaRecuperada.include(this.props.id)) {
+        if (recuperoPelicula !== null) {
+            let peliculaRecuperada = JSON.parse(recuperoPelicula)
+            if (peliculaRecuperada.includes(this.props.id)) {
             this.setState({esFav: true})
             }
         }
@@ -29,14 +29,14 @@ class Card extends Component{
 
     agregarFav(id){
         let recuperoPelicula = localStorage.getItem('peliculas')
-        let peliculaRecuperada = JSON.parse(recuperoPelicula)
-    
+        
         if (recuperoPelicula === null) {
-          let peliculasString = JSON.stringify([id])
-          localStorage.setItem('peliculas', peliculasString )
-          this.setState({esFav: true})
+            let peliculasString = JSON.stringify([id])
+            localStorage.setItem('peliculas', peliculasString )
+            this.setState({esFav: true})
         }
         else{
+            let peliculaRecuperada = JSON.parse(recuperoPelicula)
             peliculaRecuperada.push(id)
           localStorage.setItem('peliculas', JSON.stringify(peliculaRecuperada) )
           this.setState({esFav: true})
@@ -45,12 +45,12 @@ class Card extends Component{
 
     eliminarFav(id){
         let recuperoPelicula = localStorage.getItem('peliculas')
-        let peliculaRecuperada = JSON.parse(recuperoPelicula)
-    
+        
         if (recuperoPelicula === null) {
-          alert('No hay peliculas en favoritos')
+            alert('No hay peliculas en favoritos')
         }
         else{
+            let peliculaRecuperada = JSON.parse(recuperoPelicula)
           let nuevosFav = peliculaRecuperada.filter((elm) => elm !== id)
           if (nuevosFav.length === 0) {
             localStorage.removeItem('peliculas')
@@ -71,7 +71,7 @@ class Card extends Component{
                 <h5 className="card-title">{this.props.title}</h5>
                 {this.state.verMas ?  <p className="card-text">{this.props.overview}</p> : ""}
                 <button onClick={() => this.cambiarValores()} className="btn btn-primary">{this.state.textoBoton}</button>
-                <Link to={`/detail/id/${this.props.id}`}><button className="btn btn-primary">Ver detalle</button></Link>
+                <Link to={`/detalle/${this.props.id}`}><button className="btn btn-primary">Ver detalle</button></Link>
             </div>
             {
                 this.state.esFav 

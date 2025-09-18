@@ -16,7 +16,7 @@ class Favorites extends Component{
             if (peliculaARenderizar.length > 0) {
                 let peliculaVacia = []
                 peliculaARenderizar.map((elm) => 
-                    fetch(`ttps://api.themoviedb.org/3/movie/${elm}`)
+                    fetch(`https://api.themoviedb.org/3/movie/${elm}&api_key=b01c81adb05b13c4189ffba95ed51e5f`)
                     .then((resp) => resp.json())
                     .then((data) =>{ 
                         peliculaVacia.push(data)
@@ -32,8 +32,9 @@ class Favorites extends Component{
         return (
             <div>
                 {
-                    this.state.favoritos.map((elm) => 
+                    this.state.favoritos.map((elm, key) => 
                         <Card
+                        key={elm.title + key}
                         id={elm.id}
                         poster_path={elm.poster_path}
                         title={elm.title}

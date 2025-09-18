@@ -13,9 +13,9 @@ class Tarjeta extends Component {
 
     componentDidMount(){
         let recuperoSerie = localStorage.getItem('series')
-        let serieRecuperada = JSON.parse(recuperoSerie)
-        if (serieRecuperada !== null) {
-            if (serieRecuperada.include(this.props.id)) {
+        if (recuperoSerie !== null) {
+            let serieRecuperada = JSON.parse(recuperoSerie)
+            if (serieRecuperada.includes(this.props.id)) {
             this.setState({esFav: true})
             }
         }
@@ -30,15 +30,15 @@ class Tarjeta extends Component {
 
     agregarFav(id){
         let recuperoSerie = localStorage.getItem('series')
-        let serieRecuperada = JSON.parse(recuperoSerie)
-    
+        
         if (recuperoSerie === null) {
           let seriesString = JSON.stringify([id])
           localStorage.setItem('series', seriesString )
           this.setState({esFav: true})
         }
         else{
-            serieRecuperada.push(id)
+          let serieRecuperada = JSON.parse(recuperoSerie)
+          serieRecuperada.push(id)
           localStorage.setItem('series', JSON.stringify(serieRecuperada) )
           this.setState({esFav: true})
         }
@@ -46,12 +46,12 @@ class Tarjeta extends Component {
 
     eliminarFav(id){
         let recuperoSerie = localStorage.getItem('series')
-        let serieRecuperada = JSON.parse(recuperoSerie)
-    
+        
         if (recuperoSerie === null) {
           alert('No hay series en favoritos')
         }
         else{
+          let serieRecuperada = JSON.parse(recuperoSerie)
           let nuevosFav = serieRecuperada.filter((elm) => elm !== id)
           if (nuevosFav.length === 0) {
             localStorage.removeItem('series')

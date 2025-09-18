@@ -28,7 +28,7 @@ class Series extends Component {
     }
 
     cargarMas(){
-      fetch(`https://api.themoviedb.org/3/tv/popular?page=${this.state.paginaALlamar}`)
+      fetch(`https://api.themoviedb.org/3/tv/popular?page=${this.state.paginaALlamar}&api_key=b01c81adb05b13c4189ffba95ed51e5f`)
       .then(resp => resp.json())
       .then(data => this.setState({
         series: this.state.series.concat(data.results),

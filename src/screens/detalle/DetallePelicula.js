@@ -12,7 +12,7 @@ class DetallePelicula extends Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}`)
+        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}&api_key=b01c81adb05b13c4189ffba95ed51e5f`)
         .then((resp) => resp.json())
         .then((data) => this.setState({
             peliculas: data,
@@ -30,12 +30,12 @@ class DetallePelicula extends Component {
                     <p>cargando...</p>
                     :
                     <Card
-                    id={this.state.peliculas.id}
-                    poster_path={this.state.peliculas.poster_path}
-                    title={this.state.peliculas.title}
-                    vote_average={this.state.peliculas.vote_average}
-                    first_air_date= {this.state.peliculas.first_air_date}
-                    overview={this.state.peliculas.overview}
+                        id={this.state.peliculas.id}
+                        poster_path={this.state.peliculas.poster_path}
+                        title={this.state.peliculas.title}
+                        vote_average={this.state.peliculas.vote_average}
+                        first_air_date= {this.state.peliculas.first_air_date}
+                        overview={this.state.peliculas.overview}
                     />    
                 }
             </section>
