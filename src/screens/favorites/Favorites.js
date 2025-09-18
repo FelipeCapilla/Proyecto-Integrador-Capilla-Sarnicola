@@ -19,7 +19,7 @@ class Favorites extends Component{
             if (peliculaARenderizar.length > 0) {
                 let peliculaVacia = []
                 peliculaARenderizar.map((elm) => 
-                    fetch(`https://api.themoviedb.org/3/movie/${elm}&api_key=b01c81adb05b13c4189ffba95ed51e5f`)
+                    fetch(`https://api.themoviedb.org/3/movie/${elm}?api_key=b01c81adb05b13c4189ffba95ed51e5f`)
                     .then((resp) => resp.json())
                     .then((data) =>{ 
                         peliculaVacia.push(data)
@@ -34,7 +34,7 @@ class Favorites extends Component{
             if (serieARenderizar.length > 0) {
                 let serieVacia = []
                 serieARenderizar.map((elm) => 
-                    fetch(`https://api.themoviedb.org/3/tv/${elm}&api_key=b01c81adb05b13c4189ffba95ed51e5f`)
+                    fetch(`https://api.themoviedb.org/3/tv/${elm}?api_key=b01c81adb05b13c4189ffba95ed51e5f`)
                     .then((resp) => resp.json())
                     .then((data) =>{ 
                         serieVacia.push(data)

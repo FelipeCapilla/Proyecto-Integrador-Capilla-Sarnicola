@@ -12,7 +12,7 @@ class DetallePelicula extends Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}&api_key=b01c81adb05b13c4189ffba95ed51e5f`)
+        fetch(`https://api.themoviedb.org/3/movie/${this.state.id}?api_key=b01c81adb05b13c4189ffba95ed51e5f`)
         .then((resp) => resp.json())
         .then((data) => this.setState({
             peliculas: data,
@@ -22,6 +22,8 @@ class DetallePelicula extends Component {
     }
 
     render() {
+        console.log("render detalle: ", this.state);
+        
         return (
             <section class="row">
                 {
