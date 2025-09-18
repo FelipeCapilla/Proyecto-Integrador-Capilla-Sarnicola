@@ -1,11 +1,36 @@
 import React, { Component } from 'react'
+import {withRouter} from "react-router-dom"
 
-export default class Filtro extends Component {
+class Filtro extends Component {
+
+    constructor(props){
+      super(props)
+      this.state = {
+          busqueda: ''
+      }
+  }
+
+  controlarForm(evento){
+    evento.preventDefault()
+    this.props.history.push('/resultados' + this.state.busqueda)
+  }
+
+  controlarInput(evento){
+    this.setState({
+        busqueda: evento.target.value
+    }, () =>
+        this.props.filtrar(this.state.busqueda))
+
+  }
+
   render() {
     return (
-      <div>
-        
-      </div>
+      <form onSubmit={(evento) => this.controlarForm(evento)}>
+        <input onChange={(evento) => this.controlarInput(evento)}/>
+        <button> Buscar</button>
+        </form>
     )
   }
 }
+
+export default withRouter(Filtro)
