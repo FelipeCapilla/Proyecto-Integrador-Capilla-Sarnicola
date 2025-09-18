@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Tarjeta from '../../components/series/Tarjeta'
+import DetailTarjeta from '../../components/detailSerie/DetailTarjeta'
 
 class DetalleSerie extends Component {
     constructor(props){
@@ -29,13 +29,13 @@ class DetalleSerie extends Component {
                     ? 
                     <p>cargando...</p>
                     :
-                    <Card
-                    id={this.state.series.id}
-                    poster_path={this.state.series.poster_path}
-                    name={this.state.series.name}
-                    vote_average={this.state.series.vote_average}
-                    first_air_date= {this.state.series.first_air_date}
-                    overview={this.state.series.overview}
+                    <DetailTarjeta
+                        id={this.state.series.id}
+                        poster_path={this.state.series.poster_path}
+                        name={this.state.series.name}
+                        vote_average={this.state.series.vote_average}
+                        first_air_date= {this.state.series.first_air_date}
+                        overview={this.state.series.overview}
                     />    
                 }
             </section>

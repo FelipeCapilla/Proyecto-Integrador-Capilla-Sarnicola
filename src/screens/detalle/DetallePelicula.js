@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Card from '../../components/peliculas/Card'
+import DetailCard from '../../components/detailMovie/DetailCard'
 
 class DetallePelicula extends Component {
     constructor(props){
@@ -29,7 +29,7 @@ class DetallePelicula extends Component {
                     ? 
                     <p>cargando...</p>
                     :
-                    <Card
+                    <DetailCard
                         id={this.state.peliculas.id}
                         poster_path={this.state.peliculas.poster_path}
                         title={this.state.peliculas.title}
