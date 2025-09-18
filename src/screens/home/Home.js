@@ -13,11 +13,18 @@ class Home extends Component{
 
     componentDidMount(){
         fetch('https://api.themoviedb.org/3/movie/popular?api_key=b01c81adb05b13c4189ffba95ed51e5f')
-        fetch('https://api.themoviedb.org/3/tv/popular?api_key=b01c81adb05b13c4189ffba95ed51e5f')
         .then((resp) => resp.json())
         .then((data) => this.setState({
             peliculas: data.results,
             series: data.results,
+        }, () => console.log(data.results)
+        ))
+        .catch((error) => console.log('error fetch', error));
+
+        fetch('https://api.themoviedb.org/3/tv/popular?api_key=b01c81adb05b13c4189ffba95ed51e5f')
+        .then((resp) => resp.json())
+        .then((data) => this.setState({
+            series: data.results
         }, () => console.log(data.results)
         ))
         .catch((error) => console.log('error fetch', error))
