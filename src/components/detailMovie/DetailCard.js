@@ -64,13 +64,14 @@ class DetailCard extends Component{
 
     render(){
         return(
-            <article className="single-card-movie">
+            <article className="single-card-movie caja">
             <img src={`https://image.tmdb.org/t/p/w500${this.props.poster_path}`} className="card-img-top" alt="" />
             <div className="cardBody">
                 <h5 className="card-title">{this.props.title}</h5>
                 <p>{this.props.vote_average}</p>
                 <p>{this.props.first_air_date}</p>
-                {this.state.verMas ?  <p className="card-text">{this.props.overview}</p> : ""}
+                <p>{this.props.genres}</p>
+                <p className="card-text">{this.props.overview}</p>
                 <button onClick={() => this.cambiarValores()} className="btn btn-primary">{this.state.textoBoton}</button>
             </div>
             {

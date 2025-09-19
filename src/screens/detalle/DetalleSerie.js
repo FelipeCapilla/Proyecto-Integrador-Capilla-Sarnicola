@@ -37,6 +37,7 @@ class DetalleSerie extends Component {
                         vote_average={this.state.series.vote_average}
                         first_air_date= {this.state.series.first_air_date}
                         overview={this.state.series.overview}
+                        genres={this.state.series.genres.name}
                     />    
                 }
             </section>

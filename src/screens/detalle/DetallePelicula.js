@@ -38,6 +38,7 @@ class DetallePelicula extends Component {
                         vote_average={this.state.peliculas.vote_average}
                         first_air_date= {this.state.peliculas.first_air_date}
                         overview={this.state.peliculas.overview}
+                        genres={this.state.peliculas.genres.name}
                     />    
                 }
             </section>
