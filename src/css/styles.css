@@ -79,7 +79,6 @@ nav {
     height: 100px;
     overflow: hidden;
 }
-
 .all-movies .single-card-movie {
     width: 15%;
 }
@@ -116,5 +115,8 @@ nav {
     flex-direction: column;
     align-items: center;
     margin-bottom: 2%;
+    }
+    .all-movies .single-card-movie {
+        width: 100%;
     }
 }
