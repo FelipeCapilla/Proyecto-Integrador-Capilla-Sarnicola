@@ -5,7 +5,7 @@ import Formulario from "../formulario/Formulario";
 function Header(){
     return(
         <React.Fragment>
-        <h1>UdeSA Movies</h1>
+        <h1>Ariel's Movies</h1>
         <nav>
             <ul className="nav nav-tabs my-4">
 
