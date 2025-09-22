@@ -49,40 +49,36 @@ class Favorites extends Component{
 
     render() {
         return (
+            <div>
+                <h1>Favorite movies</h1>
                 <section className="row cards" id="movies">
-                <div>
-                {
-                    
-                    this.state.favoritos.map((elm, key) => 
-                        <Card
-                        key={elm.title + key}
-                        id={elm.id}
-                        poster_path={elm.poster_path}
-                        title={elm.title}
-                        overview={elm.overview}
-                        />
-                        
-                    )
-
-                }
-                </div>
-                <div>
-                {
-                    this.state.favorito.map((elm, idx) =>
-                        <Tarjeta
-                        key={idx + elm.title}
-                        id={elm.id} 
-                        poster_path={elm.poster_path} 
-                        name={elm.name} 
-                        overview={elm.overview}
-                    />
-                    )
-                }
-
-                </div>
+                    {
+                        this.state.favoritos.map((elm, key) => 
+                            <Card
+                            key={elm.title + key}
+                            id={elm.id}
+                            poster_path={elm.poster_path}
+                            title={elm.title}
+                            overview={elm.overview}
+                            />
+                        )
+                    }
                 </section>
-                
-            
+                <h1>Favorite series</h1>
+                <section className="row cards" id="tv-show">
+                    {
+                        this.state.favorito.map((elm, idx) =>
+                            <Tarjeta
+                            key={idx + elm.title}
+                            id={elm.id} 
+                            poster_path={elm.poster_path} 
+                            name={elm.name} 
+                            overview={elm.overview}
+                        />
+                        )
+                    }
+                </section>
+            </div>
         )
     }
 }
