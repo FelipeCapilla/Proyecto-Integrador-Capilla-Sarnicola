@@ -12,7 +12,6 @@ class Filtro extends Component {
 
   controlarForm(evento){
     evento.preventDefault()
-    this.props.history.push('/resultados' + this.state.busqueda)
   }
 
   controlarInput(evento){
@@ -27,7 +26,6 @@ class Filtro extends Component {
     return (
       <form onSubmit={(evento) => this.controlarForm(evento)}>
         <input onChange={(evento) => this.controlarInput(evento)}/>
-        <button> Buscar</button>
       </form>
     )
   }

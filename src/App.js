@@ -23,7 +23,7 @@ function App() {
         <Route path='/movies' component={Movies} exact={true} />
         <Route path='/series' component={Series} exact={true} />
         <Route path='/favorites' component={Favorites} exact={true} />
-        <Route path='/resultados/:busqueda' component={Resultados} exact={true} />
+        <Route path='/resultados/:busqueda/:eleccion' component={Resultados} exact={true} />
         <Route path='/detallemovie/:id' component={DetalleMovie} />
         <Route path='/detalleserie/:id' component={DetalleSerie} />
         <Route path='' component={NotFound} />
