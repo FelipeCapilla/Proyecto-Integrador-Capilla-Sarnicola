@@ -91,6 +91,13 @@ nav {
     justify-content: space-between;
     margin-bottom: 2%;
 }
+.cajaAriel{
+    display: flex;
+    justify-content: center;
+}
+.ariel{
+    width: 500px;
+}
 @media(min-width: 765px){
     nav {
         grid-template-columns: 4fr 3fr;
