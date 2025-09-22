@@ -12,8 +12,8 @@ class Favorites extends Component{
     }
 
     componentDidMount(){
-        let peliculaFavorita = localStorage.getItem("favoritos")
-        let serieFavorita = localStorage.getItem("favorito")
+        let peliculaFavorita = localStorage.getItem("peliculas")
+        let serieFavorita = localStorage.getItem("series")
         if (peliculaFavorita !== null) {
             let peliculaARenderizar = JSON.parse(peliculaFavorita)
             if (peliculaARenderizar.length > 0) {
