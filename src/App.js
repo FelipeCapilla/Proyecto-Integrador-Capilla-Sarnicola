@@ -10,6 +10,7 @@ import Favorites from "./screens/favorites/Favorites";
 import Resultados from "./screens/resultados/Resultados";
 import DetalleMovie from "./screens/detalle/DetallePelicula"
 import DetalleSerie from "./screens/detalle/DetalleSerie";
+import NotFound from "./screens/notfound/NotFound";
 
 
 
@@ -25,6 +26,7 @@ function App() {
         <Route path='/resultados/:busqueda' component={Resultados} exact={true} />
         <Route path='/detallemovie/:id' component={DetalleMovie} />
         <Route path='/detalleserie/:id' component={DetalleSerie} />
+        <Route path='' component={NotFound} />
       </Switch>
       <Footer />
     </React.Fragment>
