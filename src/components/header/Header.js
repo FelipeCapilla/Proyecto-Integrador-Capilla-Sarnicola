@@ -8,8 +8,6 @@ function Header(){
         <h1>Ariel's Movies</h1>
         <nav>
             <ul className="nav nav-tabs my-4">
-
-
                 <li className="nav-item">
                     <Link className="nav-link" to='/' >Home</Link>
                 </li>
@@ -26,7 +24,6 @@ function Header(){
             </ul>
         </nav>
         </React.Fragment>
-       
     )
 }
 
